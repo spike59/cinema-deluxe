@@ -1,0 +1,7 @@
+{
+    "name":"cinema-deluxe",
+    "port":3000,
+    "public":"build",
+    "version":"0.1.0",
+    "build":0
+}

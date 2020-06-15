@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+//import partagé avec d'autres apps
+@import "./sass/reset.scss";
+@import "./sass/variables.scss";
+
+//charte graphique variables de couleurs
+@import "./sass/colors.scss";
+
+//composants du site
+@import "./sass/App.scss";
+@import "./sass/components/header.scss";
