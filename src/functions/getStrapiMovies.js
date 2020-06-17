@@ -1,25 +1,31 @@
+import strapi from '../config/strapi.json';
 
-function getStrapiMovies(title) {
-    console.log("get strapi movies");
-    return fetch("http://strapi.localhost:1337/films")
+function getStrapiMovies(filter) {
+    console.log("get  movies with filter",filter);
+    let uri = "http://" + strapi.uri + "/films";
+    if (filter != "")
+    {
+        uri += "?" + filter;
+    }
+    return fetch(uri)
     .then(response=>response.json())
     .then(data => {
         console.log("data retrieved",data);
-        const state = {
+        const filterData = {
             loaded: true,
             films: data,
             error: ""
         }
-        return state;
+        return filterData;
     })
     .catch(e=>{
         console.log("error",e)
-        const state = {
+        const filterData = {
             loaded: true,
             films: [],
             error: e
         }
-        return state;
+        return filterData;
     });
     //console.log ("test",test);
     //return "bidule";

@@ -1,34 +1,23 @@
-import React from 'react'
-
+import React from 'react';
 import Films from './Films.js';
 
-const MainContent = ({ loaded, films, error }) => {
-    if (!loaded) {
-        return (
+const MainContent = () => {
+
+    const topRating3 = "_sort=rating:ASC&_limit=3";
+    const actionFilms = "genre=action&_limit=6";
+    return (
+        <div>
             <div>
-                <h1>Chargement...</h1>
+                <h1>Top films</h1>
+                <Films filter={topRating3} count="3" />
             </div>
-        )
-    }
-    else {
-        if (error != "") {
-            return (
-                <div>
-                    <p>erreur ! : {error}</p>
-                </div>
-            ) 
-        }
-        else {
+            <div>
+                <h1>films d'action</h1>
+                <Films filter={actionFilms} count="6" />
+            </div>
+        </div>
+    )
 
-
-            return (
-                <div>
-                    chargé
-                    <Films films={films} count="3" />
-                </div>
-            )
-        }
-    }
 }
 
 export default MainContent
