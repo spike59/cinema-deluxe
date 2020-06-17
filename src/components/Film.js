@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import unirest from 'unirest';
+import React from 'react'
+
 
 const Film = ({ id, imdbTitle, title, description, poster, rating, genre, ratingImdb, votes }) => {
 
@@ -9,7 +9,7 @@ const Film = ({ id, imdbTitle, title, description, poster, rating, genre, rating
             <div className="film">
                 <div className="film_poster_box">
                     <div className="film_poster_box_img">
-                        <img src={poster} />
+                        <img src={poster} alt={"film poster " + title}/>
                     </div>
                     <div className="film_poster_box_top">
                         <h2>title:{title}</h2>

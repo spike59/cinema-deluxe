@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Film from './Film.js';
 import filmPlaceholder from '../data/film_placeholder.json';
 import getStrapiMovies from '../functions/getStrapiMovies.js';
-import UUID from '../functions/uuid.js';
+
 
 const Films = ({ filter, count ,big, bp}) => {
 
@@ -16,10 +16,10 @@ const Films = ({ filter, count ,big, bp}) => {
     }
     const [filterState, setFilterState] = useState(initialFilterState);
 
-    let loaded = false, films = [];
+    let  films = [];
     let storageFilter = JSON.parse(localStorage.getItem("filter:" + filter));
     if (storageFilter && storageFilter.loaded) {
-        loaded = true;
+        
         films = storageFilter.films;
         //console.log("on arecupéré le filter" + filter + " et les films " + films);
     }
@@ -49,7 +49,7 @@ const Films = ({ filter, count ,big, bp}) => {
             loading_strapi_films();
         }
 
-    }, [filterState])
+    })
 
     //creation de la liste des films, si pas de données on cree des placeholders
     
@@ -58,19 +58,18 @@ const Films = ({ filter, count ,big, bp}) => {
     //changer en fonction du count pour remplir
     //console.log("filter " + filter + " films " + films.length + " count " + count);
     //console.log("films before add", films, films.length, count);
-    if (films.length != count) {
+    if (films.length < count) {
         for (let i = films.length; i < count; i++) {
             let f = { ...filmPlaceholder };
-            f.id = i + UUID(i);
+            f.id = i + 100;
             //console.log("ajour dun placeholder");
             films.push(f);
         }
     }
-    let currentCount = 0;
+    
     //console.log("update filmList ", films);
     const filmsList = films.map((film) => {
-        if (currentCount < count) {
-            currentCount++;
+
             return (
                 <Film 
                 key={film.id} 
@@ -86,7 +85,6 @@ const Films = ({ filter, count ,big, bp}) => {
                 />
             )
 
-        }
     })
     let style ="films_box_" + bp;
     if (big)

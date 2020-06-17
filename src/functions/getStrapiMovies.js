@@ -3,7 +3,7 @@ import strapi from '../config/strapi.json';
 function getStrapiMovies(filter) {
     //console.log("get  movies with filter",filter);
     let uri = "http://" + strapi.uri + "/films";
-    if (filter != "")
+    if (filter !== "")
     {
         uri += "?" + filter;
     }
