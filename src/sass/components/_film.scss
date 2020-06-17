@@ -1,0 +1,41 @@
+.film_box {
+    background-color:green;
+    padding:1rem;
+    .film {
+        background-color:yellow;
+        display:flex;
+        flex-direction:column;
+        padding:1rem;
+        .film_poster_box {
+            background-color:maroon;
+            padding:1rem;
+            position:relative;
+            display:flex;
+            flex-direction:column;  
+            .film_poster_box_img img {
+                
+                width:100%;
+            }
+
+
+
+            .film_poster_box_top {
+                position:absolute;
+                background-color:rgba(255, 255, 255, 0.295);
+                top:0;
+                left:0;
+                right:0;
+            }
+            .film_poster_box_bot {
+                position:absolute;
+                background-color:rgba(255, 255, 255, 0.295);
+                bottom:0;
+                left:0;
+                right:0;
+            }
+        }
+        .film_videos {
+
+        }
+    }
+}

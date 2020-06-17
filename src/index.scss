@@ -18,6 +18,10 @@ code {
 //charte graphique variables de couleurs
 @import "./sass/colors.scss";
 
+@import "./sass/mixins/films_box_mixin";
 //composants du site
 @import "./sass/App.scss";
 @import "./sass/components/header.scss";
+@import "./sass/components/main_content.scss";
+@import "./sass/components/films.scss";
+@import "./sass/components/film.scss";

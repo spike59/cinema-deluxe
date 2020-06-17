@@ -1,0 +1,118 @@
+@mixin films_box() {
+    $sizes: "default", "sm", "md", "lg", "xl";
+    //on reprend une base par defaut
+    $count:6;
+    @each $size in $sizes {
+        .films_box_#{$size} {
+            background-color: grey;
+            border-radius: 5px;
+            padding: 1rem;
+
+            .films {
+                display: flex;
+                justify-content: space-evenly;
+                padding: 1rem;
+                .film_box {
+                    flex-basis: #{1 / $count * 100 + "%"};
+                }
+            }
+        }
+    }
+    .films_box_default, .films_box_sm  {
+
+
+        .films {
+            justify-content: flex-start;
+            //flex-direction:column;
+            padding: 0.5rem;
+            flex-wrap:wrap;
+            .film_box {
+                flex-basis: #{(1 / 2 * 100) + "%"};
+            }
+        }
+    }    
+    .films_box_md {
+
+        .films {
+            justify-content: flex-start;
+            //flex-direction:column;
+            padding: 0.5rem;
+            flex-wrap:wrap;
+            .film_box {
+                flex-basis: #{(1 / 3 * 100) + "%"};
+            }
+        }
+    }
+    .films_box_lg  {
+
+        .films {
+            justify-content: flex-start;
+            //flex-direction:column;
+            padding: 0.5rem;
+            flex-wrap:wrap;
+            .film_box {
+                flex-basis: #{(1 / 4 * 100) + "%"};
+            }
+        }
+    }          
+}
+@mixin films_box_big() {
+    $sizes: "default", "sm", "md", "lg", "xl";
+    //on reprend une base par defaut
+    $count:3;
+    @each $size in $sizes {
+        .films_box_#{$size}_big {
+            background-color: grey;
+            border-radius: 5px;
+            padding: 1rem;
+
+            .films {
+                display: flex;
+                justify-content: space-evenly;
+                padding: 1rem;
+                .film_box {
+                    flex-basis: #{1 / $count * 100 + "%"};
+                }
+            }
+        }
+    }
+    .films_box_default_big, .films_box_sm_big  {
+
+        .films {
+            display: flex;
+            justify-content: space-between;
+            flex-direction:column;
+            padding: 0.5rem;
+            flex-wrap:wrap;
+            .film_box {
+                //flex-basis: #{1 / $count * 100 + "%"};
+            }
+        }
+    }    
+    .films_box_md_big {
+
+        .films {
+            display: flex;
+            justify-content: space-between;
+            //flex-direction:column;
+            padding: 0.5rem;
+            flex-wrap:wrap;
+            .film_box {
+                flex-basis: #{(1 / 2 * 100) + "%"};
+            }
+        }
+    }
+    .films_box_lg_big  {
+
+        .films {
+            display: flex;
+            justify-content: space-between;
+            //flex-direction:column;
+            padding: 0.5rem;
+            flex-wrap:wrap;
+            .film_box {
+                flex-basis: #{(1 / $count * 100) + "%"};
+            }
+        }
+    }          
+}

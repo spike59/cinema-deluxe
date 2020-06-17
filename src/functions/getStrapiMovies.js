@@ -1,7 +1,7 @@
 import strapi from '../config/strapi.json';
 
 function getStrapiMovies(filter) {
-    console.log("get  movies with filter",filter);
+    //console.log("get  movies with filter",filter);
     let uri = "http://" + strapi.uri + "/films";
     if (filter != "")
     {
@@ -10,7 +10,7 @@ function getStrapiMovies(filter) {
     return fetch(uri)
     .then(response=>response.json())
     .then(data => {
-        console.log("data retrieved",data);
+        //console.log("data retrieved",data);
         const filterData = {
             loaded: true,
             films: data,
@@ -19,7 +19,7 @@ function getStrapiMovies(filter) {
         return filterData;
     })
     .catch(e=>{
-        console.log("error",e)
+        //console.log("error",e)
         const filterData = {
             loaded: true,
             films: [],

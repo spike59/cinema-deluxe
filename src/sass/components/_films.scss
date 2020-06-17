@@ -1,0 +1,12 @@
+.films_box {
+    background-color:grey;
+    border-radius:5px;
+    padding:1rem;
+}
+.films {
+    display:flex;
+    justify-content:space-evenly;
+    padding:1rem;
+}
+@include films_box();
+@include films_box_big();

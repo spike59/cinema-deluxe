@@ -10,29 +10,47 @@ import initStorage from './functions/initStorage.js';
 
 
 function App() {
-  //initStorage();
-  // const initialState ={
-  //   loade:false,
-  //   films:[],
-  //   filters:{},
-  //   updateTime:Time.now(),
-  //   errors:[],
-  //   warnings:[]
-  // }
-  // const [state,setState]=useState(initialState);
-  // if (localStorage.getItem("cinema-deluxe"))
-  // {
-  //   //on a des données deja on verifie pour mis a jour
-  // }
-  // else
-  // {
-  //   //on va chercher les données sur strapi
-  // }
+  console.log("RENDER APP");
+  const initialBp = getBp(window.innerWidth);
+  console.log("initial BP",initialBp);
+  const [bp, setBp] = useState(initialBp);
+  function getBp(winSize)
+  {
+    let n="default";
+    const breakpoints = [576, 768, 992, 1200];
+    const breakcodes = ["sm", "md", "lg", "xl"];
+    breakpoints.forEach((bp) => {
+      if (winSize >= bp) {
+        n = breakcodes[breakpoints.indexOf(bp)];
+      }
+    });
+    return n;
+  }
+  function handleResize() {
+    //console.log("check resize");
+    //console.log("win size",window.innerWidth);
+    let w = window.innerWidth;
+    let newBp = getBp(w);
+    if (bp != newBp)
+    {
+      console.log("chgt BP",newBp);
+      setBp(newBp);
+    }
+
+  };
+  useEffect(() => {
+    //handleResize();
+
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [bp])
+  console.log("return");
   return (
     <div className="App">
       <Header />
-      {/* <MainContent loaded={state.loaded} films={state.films} filters={state.filters}/> */}
-      <MainContent/>
+      <MainContent bp={bp}/>
       <Footer />
     </div>
   );
