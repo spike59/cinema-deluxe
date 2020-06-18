@@ -1,0 +1,12 @@
+{
+    "list": [
+        "action",
+        "science_fiction"
+    ],
+    "action":{
+        "title":"Action"
+    },
+    "science_fiction":{
+        "title":"Science Fiction"
+    }
+}

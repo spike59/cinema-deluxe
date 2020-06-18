@@ -39,7 +39,7 @@ function App() {
   })
   return (
     <div className="App">
-      <Header />
+      <Header bp={bp}/>
       <MainContent bp={bp}/>
       <Footer />
     </div>
