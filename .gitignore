@@ -74,3 +74,4 @@ sketch
 *.scss.map
 
 # End of https://www.toptal.com/developers/gitignore/api/react,firebase,sass,git
+src/config/**/*

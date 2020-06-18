@@ -17,6 +17,7 @@ const MainContent = ({ bp }) => {
 
     return (
         <div className={"main_content"}>
+            
             <section id="top_films">
                 <h1>Top films</h1>
                 <Films filter={topRating3} count="3" big={true} bp={bp} />
