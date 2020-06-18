@@ -22,7 +22,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 concept
-
+src/config
 
 # Created by https://www.toptal.com/developers/gitignore/api/react,firebase,sass,git
 # Edit at https://www.toptal.com/developers/gitignore?templates=react,firebase,sass,git
@@ -74,4 +74,3 @@ sketch
 *.scss.map
 
 # End of https://www.toptal.com/developers/gitignore/api/react,firebase,sass,git
-src/config/**/*
