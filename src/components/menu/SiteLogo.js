@@ -1,11 +1,12 @@
 import React from 'react'
 
-const StieLogo = () => {
+const SiteLogo = () => {
     return (
-        <div>
+        <div className="logo">
+           <img src="img/film-ico.svg" alt="logo film"/>
            <h1>Cinema-Deluxe</h1>
         </div>
     )
 }
 
-export default StieLogo
+export default SiteLogo

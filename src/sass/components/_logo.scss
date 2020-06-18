@@ -1,0 +1,19 @@
+$movie_ico: "../img/film-ico.svg";
+.logo {
+    background-color:black;
+    border-radius:5px;
+    border:3px solid white;
+    display:flex;
+    align-items: center;
+
+    padding-left:1rem;
+    img {
+        
+        height:4rem;
+    }
+    h1 {
+        
+        padding-left:1rem;
+        padding-right:1rem;
+    }
+}

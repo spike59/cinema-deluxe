@@ -12,7 +12,7 @@ const Film = ({ id, imdbTitle, title, description, poster, rating, genre, rating
                         <img src={poster} alt={"film poster " + title}/>
                     </div>
                     <div className="film_poster_box_top">
-                        <h2>title:{title}</h2>
+                        <h2>{title}</h2>
                     </div>
                     <div className="film_poster_box_bot">
                         <p>genre</p>

@@ -1,0 +1,17 @@
+@mixin button( ){
+
+    a {
+        border-radius: 5px;
+        border: 2px black solid;
+        padding: 0.5rem;
+        background-color: white;
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    a:hover {
+        background-color: rgba(255, 255, 255, 0.281);
+        color: black;
+    }
+
+}
