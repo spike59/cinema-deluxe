@@ -1,8 +1,14 @@
-import strapi from '../config/strapi.json';
+//import env from './env.js';
+//const strapi_var = '../config/'+ process.env.NODE_ENV + 'strapi.json';
+//import strapi from '../config/strapi.js';
+//const strapi = env().strapi;
 
+import strapi from '../config/production/strapi.json';
+
+console.log("strapi loaded",strapi);
 function getStrapiMovies(filter) {
     //console.log("get  movies with filter",filter);
-    let uri = "http://" + strapi.uri + "/films";
+    let uri =  strapi.uri + "/films";
     if (filter !== "")
     {
         uri += "?" + filter;
