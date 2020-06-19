@@ -1,8 +1,3 @@
-//import env from './env.js';
-//const strapi_var = '../config/'+ process.env.NODE_ENV + 'strapi.json';
-//import strapi from '../config/strapi.js';
-//const strapi = env().strapi;
-
 import strapi from '../config/production/strapi.json';
 
 console.log("strapi loaded",strapi);
